@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import com.example.aboutme.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -30,7 +31,8 @@ class MainActivity : AppCompatActivity() {
     private fun addNickname(view: View) {
         val editText = binding.nicknameEdit
         val nicknameTextView = binding.nicknameText
-        nicknameTextView.text = editText.text.toString();
+        myName?.nickname = editText.text.toString()
+        //invalidateAll()
         editText.visibility = View.GONE;
         binding.doneButton.visibility = View.GONE;
         nicknameTextView.visibility = View.VISIBLE;
